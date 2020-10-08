@@ -39,6 +39,19 @@ function search(User){
     _.find(User.allGrades,function(U){if(U.weight==1){console.log("Przedmiot z waga 1 to:",U.subjectName);}});
 }
 
+function isValidEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+function chaeckMail(Mail){
+    arr=_.toArray(_.filter(Mail,function(mail){ return isValidEmail(mail) }));
+    arr=_.sortBy(arr);
+    arr.forEach(element => {
+        console.log(element);
+    });
+}
+
 const user={
     name:'Imie',
     surname:'Nazwisko',
@@ -62,6 +75,19 @@ const user={
     ]
 };
 
+const collection=[
+    {},
+    15,
+    "hello@test.pl",
+    null,
+    ['aaa','bbb',5],
+    'admin@gmail.com',
+    undefined,
+    'a34@yahoo.com',
+    '321@a',
+    '321.pl'
+]
 
 userInfo(user);
 search(user);
+chaeckMail(collection);
