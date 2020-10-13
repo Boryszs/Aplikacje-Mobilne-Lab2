@@ -6,19 +6,14 @@ function avg(){
 }
 
 function min(){
-    console.log("srednia:",_.min(arguments));
+    console.log("min:",_.min(arguments));
 }
 
 function max(){
-    console.log("srednia:",_.max(arguments));
+    console.log("max:",_.max(arguments));
 }
 
-avg(4,4,4);
-avg(5,10,5);
-avg(2,3,4,5,6);
 
-min(1,2,3,0,4,5);
-max(1,2,3,10,4,5);
 
 function userInfo(User){
         var suma=0;
@@ -87,6 +82,13 @@ const collection=[
     '321@a',
     '321.pl'
 ]
+
+avg(4,4,4);
+avg(5,10,5);
+avg(2,3,4,5,6);
+
+min(1,2,3,0,4,5);
+max(1,2,3,10,4,5);
 
 userInfo(user);
 search(user);
